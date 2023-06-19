@@ -56,17 +56,17 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.hook('app:resolve', (app) => {
       app.configs.push(appConfigFile)
     })
+    console.log(resolver.resolve(runtimeDir, 'app.config.ts'))
 
     await installModule('@unocss/nuxt', {
       preflight: true,
       presets: [presetUno(), presetWind(), presetAttributify(), presetIcons()],
       content: {
         pipeline: {
-          include: [
-            /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-            'src/**/*.{js,ts}',
+          filesystem: [
             resolver.resolve(runtimeDir, 'components/**/*.{vue,mjs,ts}'),
-            resolver.resolve(runtimeDir, '*.{mjs,js,ts}')
+            resolver.resolve(runtimeDir, '*.{mjs,js,ts}'),
+            resolver.resolve(runtimeDir, 'app.config.ts'),
           ],
         },
       },

@@ -4,7 +4,7 @@
       testing to see if this all works
     </div>
     <u-button color="green">
-      Hello
+      This should be green
     </u-button>
   </div>
 </template>
