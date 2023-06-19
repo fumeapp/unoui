@@ -5,7 +5,7 @@ module.exports = {
     'vue/multi-word-component-names': 0,
     'vue/max-attributes-per-line': ['error', {
       singleline: {
-        max: 5
+        max: 10
       }
     }]
   }

@@ -1,5 +1,4 @@
 import { installModule } from '@nuxt/kit'
-import { defineConfig } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
 import { presetUno, presetWind, presetAttributify } from 'unocss'
 import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, resolvePath } from '@nuxt/kit'
@@ -61,11 +60,16 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('@unocss/nuxt', {
       preflight: true,
       presets: [presetUno(), presetWind(), presetAttributify(), presetIcons()],
-      exposeConfig: true,
-      content: [
-        resolver.resolve(runtimeDir, 'components/**/*.{vue,mjs,ts}'),
-        resolver.resolve(runtimeDir, '*.{mjs,js,ts}')
-      ],
+      content: {
+        pipeline: {
+          include: [
+            /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+            'src/**/*.{js,ts}',
+            resolver.resolve(runtimeDir, 'components/**/*.{vue,mjs,ts}'),
+            resolver.resolve(runtimeDir, '*.{mjs,js,ts}')
+          ],
+        },
+      },
     })
 
     const globalColors = presetUno().theme?.colors
