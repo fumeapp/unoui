@@ -110,6 +110,11 @@ export default defineNuxtModule<ModuleOptions>({
       colors: colors,
     }
 
+    if (preset.theme?.colors) {
+      preset.theme.colors.primary = preset.theme.colors[nuxt.options.appConfig.ui.primary]
+      preset.theme.colors.gray = preset.theme.colors[nuxt.options.appConfig.ui.gray]
+    }
+
     const safelist = []
     safelist.push(...generateSafelist(colors))
 
