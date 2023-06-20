@@ -106,7 +106,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.appConfig.ui = {
       ...nuxt.options.appConfig.ui,
       primary: 'green',
-      gray: 'cool',
+      gray: 'slate',
       colors: colors,
     }
 
