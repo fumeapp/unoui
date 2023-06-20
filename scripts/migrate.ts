@@ -55,6 +55,14 @@ async function main() {
     {
       pattern: "'@nuxtjs/plausible',",
       replacement: "",
+    },
+    {
+      pattern: "NuxtLabs",
+      replacement: "Uno",
+    },
+    {
+      pattern: "NuxtLabs UI",
+      replacement: "Uno UI",
     }
   ]
 
@@ -64,7 +72,10 @@ async function main() {
   copyFilesRegex('docs', docsRules)
     fs.mkdirSync(path.join(__dirname, '../docs/assets'), { recursive: true })
   copyFileRegex(
-    path.join(__dirname, '../migrate/docs-assets-prose.css'),
+    path.join(__dirname, '../migrate/uno.config.ts'),
+    path.join(__dirname, '../docs/uno.config.ts'), [])
+  copyFileRegex(
+    path.join(__dirname, '../migrate/assets-prose.css'),
     path.join(__dirname, '../docs/assets/prose.css'), [])
   copyFileRegex(
     path.join(__dirname, '../migrate/components-Logo.vue'),
