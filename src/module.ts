@@ -1,6 +1,5 @@
 import { installModule } from '@nuxt/kit'
-import presetIcons from '@unocss/preset-icons'
-import { presetUno, presetWind, presetAttributify, } from 'unocss'
+import { presetUno, presetWind, presetAttributify, presetIcons } from 'unocss'
 import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, resolvePath } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import { generateSafelist, excludeColors, customSafelistExtractor } from './colors'
