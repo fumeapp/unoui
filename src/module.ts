@@ -40,7 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
     version,
-    configKey: 'unoui',
+    configKey: 'ui',
     compatibility: {
       nuxt: '^3.0.0-rc.8'
     }
@@ -178,8 +178,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addImportsDir(resolver.resolve(runtimeDir, 'composables'))
-
-
 
   }
 })
