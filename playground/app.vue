@@ -1,10 +1,10 @@
 <template>
-  <div flex flex-col space-y-4 items-center justify-center w-screen h-screen>
-    <div bg-green-400 text-red-500 py-1 px-2 rounded-md>
-      testing to see if this all works
-    </div>
-    <u-button color="green">
-      This should be green
+  <div flex flex-col space-y-4 items-center justify-center w-screen h-screen bg-red-100>
+    <u-button color="blue">
+      This should be blue
+    </u-button>
+    <u-button>
+      This should be primary - default to green
     </u-button>
   </div>
 </template>
