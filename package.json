@@ -54,7 +54,6 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/module-builder": "^0.4.0",
     "@nuxthq/studio": "^0.13.2",
-    "@nuxtjs/plausible": "^0.2.1",
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^20.3.1",
     "@vueuse/nuxt": "^10.1.2",

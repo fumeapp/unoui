@@ -49,18 +49,19 @@ async function main() {
       replacement: "import { presetUno } from 'unocss'\r\nconst colors = presetUno().theme.colors",
     },
   ]
-
   copyFileRegex(
     path.join(__dirname, '../../ui/src/runtime/app.config.ts'),
     path.join(__dirname, '../src/runtime/app.config.ts'), []),
   copyFilesRegex('docs', colorsRules)
   // copy migrate/docs-prose.css to docs/assets/prose.css
+  // copy migrate/components-Logo.vue to docs/components/Logo.vue
   /* inject  css:
   export default defineNuxtConfig({
     css: [ '@/assets/docs.css', ],
     // @ts-ignore
     modules: [
   */
+    // remove '@nuxtjs/plausible' dfrom docs/nuxt.config.ts,
 }
 
 main().catch(err => {
