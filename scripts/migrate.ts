@@ -39,7 +39,7 @@ function copyFilesRegex(source: string, regex: ReplacementRule[]): void {
 
 async function main() {
   copyFilesRegex('src/runtime/components', [])
-  const colorsRules: ReplacementRule[] = [
+  const docsRules: ReplacementRule[] = [
     {
     pattern: "import colors from '#tailwind-config/theme/colors'",
     replacement: "import { presetUno } from 'unocss'\r\nconst colors = presetUno().theme.colors",
@@ -48,20 +48,28 @@ async function main() {
       pattern: "import colors from 'tailwindcss/colors'",
       replacement: "import { presetUno } from 'unocss'\r\nconst colors = presetUno().theme.colors",
     },
+    {
+      pattern: "modules: [",
+      replacement: "css: [ '@/assets/prose.css', ],\r\n  modules: [",
+    },
+    {
+      pattern: "'@nuxtjs/plausible',",
+      replacement: "",
+    }
   ]
+
   copyFileRegex(
     path.join(__dirname, '../../ui/src/runtime/app.config.ts'),
-    path.join(__dirname, '../src/runtime/app.config.ts'), []),
-  copyFilesRegex('docs', colorsRules)
-  // copy migrate/docs-prose.css to docs/assets/prose.css
-  // copy migrate/components-Logo.vue to docs/components/Logo.vue
-  /* inject  css:
-  export default defineNuxtConfig({
-    css: [ '@/assets/docs.css', ],
-    // @ts-ignore
-    modules: [
-  */
-    // remove '@nuxtjs/plausible' dfrom docs/nuxt.config.ts,
+    path.join(__dirname, '../src/runtime/app.config.ts'), [])
+  copyFilesRegex('docs', docsRules)
+    fs.mkdirSync(path.join(__dirname, '../docs/assets'), { recursive: true })
+  copyFileRegex(
+    path.join(__dirname, '../migrate/docs-assets-prose.css'),
+    path.join(__dirname, '../docs/assets/prose.css'), [])
+  copyFileRegex(
+    path.join(__dirname, '../migrate/components-Logo.vue'),
+    path.join(__dirname, '../docs/components/Logo.vue'), [])
+
 }
 
 main().catch(err => {
