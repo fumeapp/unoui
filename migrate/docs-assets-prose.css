@@ -1,0 +1,25 @@
+.prose :where(pre):not(:where([class~=not-prose] *)) {
+    background-color: var(--color-gray-600);
+    border: 1px solid;
+    border-color: rgba(51,65,85);
+    border-radius: .375rem;
+    color: var(--un-prose-pre-code);
+    font-size: .875em;
+    font-weight: 400;
+    line-height: 1.7142857;
+    margin: 0 !important;
+    overflow-x: auto;
+    padding: .8571429em 1.1428571em;
+    white-space: pre-wrap;
+    word-break: break-word
+}
+
+.prose :where(code):not(:where([class~=not-prose] *)) {
+  background-color: var(--un-prose-pre-bg);
+  border: 1px solid var(--un-prose-pre-border);
+  border-radius: .375rem;
+  color: var(--un-prose-code);
+  font-size: .875em;
+  font-weight: 600;
+  padding: .25rem .375rem;
+}

@@ -1,5 +1,5 @@
 import { installModule } from '@nuxt/kit'
-import { presetMini, presetUno, presetWind, presetAttributify, presetIcons } from 'unocss'
+import { presetMini, presetUno, presetWind, presetAttributify, presetIcons, presetTypography } from 'unocss'
 import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, addImportsDir, resolvePath } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import { generateSafelist, excludeColors } from './colors'
@@ -124,7 +124,7 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@unocss/nuxt', {
       preflight: true,
-      presets: [preset, presetMini(), presetWind(), presetAttributify(), presetIcons()],
+      presets: [preset, presetMini(), presetWind(), presetAttributify(), presetIcons(), presetTypography() ],
       safelist: safelistRegexToStrings(safelist),
        content: {
          pipeline: {

@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -77,6 +77,9 @@ devDependencies:
     specifier: ^20.3.1
     version: 20.3.1
   '@unocss/preset-icons':
+    specifier: ^0.53.1
+    version: 0.53.1
+  '@unocss/preset-typography':
     specifier: ^0.53.1
     version: 0.53.1
   '@vueuse/nuxt':
@@ -1787,7 +1790,6 @@ packages:
     resolution: {integrity: sha512-8/+R8ctMwIpUQk5NMDgxCJInWqn7LjzmvgnT2x+LFkCA3F+etU9FNDMV5eg3feNdsHSWsJlKnPlS+cjGseSLiA==}
     dependencies:
       '@unocss/core': 0.53.1
-    dev: false
 
   /@unocss/inspector@0.53.1:
     resolution: {integrity: sha512-zyAN+kazVAi/fciNIXhF87UdcYj7lPxI6jwUTfne86ASFaVbqoM2cD08gUQJHK2dhRJdhKx/Av6IkMdJtd80PQ==}
@@ -1855,7 +1857,6 @@ packages:
     dependencies:
       '@unocss/core': 0.53.1
       '@unocss/extractor-arbitrary-variants': 0.53.1
-    dev: false
 
   /@unocss/preset-tagify@0.53.1:
     resolution: {integrity: sha512-VWVSamcBVrTxNzwQUiwVs9wzyc146Pgt8at+PH+wncKL0ihikCr5pJjfIbRdhrryeX3WKokRofv78tJlR1wTqQ==}
@@ -1868,7 +1869,6 @@ packages:
     dependencies:
       '@unocss/core': 0.53.1
       '@unocss/preset-mini': 0.53.1
-    dev: false
 
   /@unocss/preset-uno@0.53.1:
     resolution: {integrity: sha512-hu7aZOeNZ5/NDY56h7IASZv8RW0Ce40YZXvWIYMiTRLYP2S39aVpjZWqPO7+U4j2QoZhH1apM9B9FTs9v6nLwg==}

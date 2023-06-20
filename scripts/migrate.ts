@@ -54,8 +54,13 @@ async function main() {
     path.join(__dirname, '../../ui/src/runtime/app.config.ts'),
     path.join(__dirname, '../src/runtime/app.config.ts'), []),
   copyFilesRegex('docs', colorsRules)
-  // docs/nuxt.config.ts needs to be replaced
-  // docs/plugins/ui.ts needs to be replaced
+  // copy migrate/docs-prose.css to docs/assets/prose.css
+  /* inject  css:
+  export default defineNuxtConfig({
+    css: [ '@/assets/docs.css', ],
+    // @ts-ignore
+    modules: [
+  */
 }
 
 main().catch(err => {
