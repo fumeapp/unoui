@@ -1,8 +1,8 @@
 import { installModule } from '@nuxt/kit'
-import { presetUno, presetWind, presetAttributify, presetIcons } from 'unocss'
-import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, resolvePath } from '@nuxt/kit'
+import { presetMini, presetUno, presetWind, presetAttributify, presetIcons } from 'unocss'
+import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, addImportsDir, resolvePath } from '@nuxt/kit'
 import { name, version } from '../package.json'
-import { generateSafelist, excludeColors, customSafelistExtractor } from './colors'
+import { generateSafelist, excludeColors } from './colors'
 import { safelistRegexToStrings } from './unocss'
 import appConfig from './runtime/app.config'
 
@@ -55,6 +55,9 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     const runtimeDir = resolver.resolve('./runtime')
+
+    nuxt.options.build.transpile.push(runtimeDir)
+    nuxt.options.build.transpile.push('@popperjs/core', '@headlessui/vue')
 
     const appConfigFile = await resolvePath(resolver.resolve(runtimeDir, 'app.config'))
     nuxt.hook('app:resolve', (app) => {
@@ -119,7 +122,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     await installModule('@unocss/nuxt', {
       preflight: true,
-      presets: [preset, presetWind(), presetAttributify(), presetIcons()],
+      presets: [preset, presetMini(), presetWind(), presetAttributify(), presetIcons()],
       safelist: safelistRegexToStrings(safelist),
        content: {
          pipeline: {
@@ -133,8 +136,6 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
-
-
     addComponentsDir({
       path: resolver.resolve(runtimeDir, 'components', 'elements'),
       prefix: options.prefix,
@@ -142,9 +143,12 @@ export default defineNuxtModule<ModuleOptions>({
       watch: false
     })
 
+    addImportsDir(resolver.resolve(runtimeDir, 'composables'))
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    addPlugin({
+      src: resolver.resolve(runtimeDir, 'plugins', 'colors')
+    })
+
 
   }
 })

@@ -33,6 +33,10 @@
   "dependencies": {
     "@nuxt/kit": "^3.5.3",
     "@unocss/nuxt": "^0.53.1",
+    "@popperjs/core": "^2.11.8",
+    "@headlessui/vue": "^1.7.14",
+    "@vueuse/core": "^10.1.2",
+    "lodash-es": "^4.17.21",
     "unocss": "^0.53.1"
   },
   "devDependencies": {
