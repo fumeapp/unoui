@@ -13,13 +13,24 @@
     white-space: pre-wrap;
     word-break: break-word
 }
-
-.prose :where(code):not(:where([class~=not-prose] *)) {
-  background-color: var(--un-prose-pre-bg);
-  border: 1px solid var(--un-prose-pre-border);
-  border-radius: .375rem;
-  color: var(--un-prose-code);
-  font-size: .875em;
+.prose :where(h3):not(:where([class~=not-prose] *)) {
+  color: var(--tw-prose-headings);
+  font-size: 1.25em;
   font-weight: 600;
-  padding: .25rem .375rem;
+  line-height: 1.6;
+  margin-bottom: .6em;
+  margin-top: 1.6em;
+}
+
+
+
+.prose :where(p):not(:where([class~=not-prose] *)) {
+  margin-bottom: 1.25em;
+  margin-top: 1.25em;
+}
+
+
+code, kbd, pre, samp {
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-size: 1em;
 }
