@@ -411,8 +411,8 @@ const select = {
     size: 'sm',
     color: 'white',
     variant: 'outline',
-    loadingIcon: 'i-mdi-refresh',
-    trailingIcon: 'i-mdi:chevron-down'
+    loadingIcon: 'i-heroicons-arrow-path-20-solid',
+    trailingIcon: 'i-heroicons-chevron-down-20-solid'
   }
 }
 
@@ -660,11 +660,11 @@ const pagination = {
     },
     prevButton: {
       color: 'white',
-      icon: 'i-mdi-chevron-left'
+      icon: 'i-heroicons-chevron-left-20-solid'
     },
     nextButton: {
       color: 'white',
-      icon: 'i-mdi-chevron-right'
+      icon: 'i-heroicons-chevron-right-20-solid'
     }
   }
 }
@@ -835,7 +835,7 @@ const notification = {
     color: 'primary',
     icon: null,
     closeButton: {
-      icon: 'i-mdi:close',
+      icon: 'i-heroicons-x-mark-20-solid',
       color: 'gray',
       variant: 'link',
       padded: false
