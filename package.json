@@ -2,10 +2,7 @@
   "name": "unoui",
   "version": "0.0.1",
   "description": "UnoUI",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fumeapp/unoui.git"
-  },
+  "repository": "https://github.com/fumeapp/unoui",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,37 +18,52 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "build": "nuxt-module-build",
+    "prepack": "pnpm build",
+    "dev": "nuxi dev docs",
+    "build:docs": "nuxi generate docs",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
+    "typecheck": "nuxi typecheck",
+    "prepare": "nuxi prepare docs",
+    "release": "pnpm lint && standard-version && git push --follow-tags",
     "migrate": "jiti ./scripts/migrate.ts"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.14",
     "@nuxt/kit": "^3.5.3",
+    "@nuxtjs/color-mode": "^3.2.0",
     "@popperjs/core": "^2.11.8",
     "@unocss/nuxt": "^0.53.1",
     "@vueuse/core": "^10.2.0",
+    "@vueuse/integrations": "^10.1.2",
+    "@vueuse/math": "^10.1.2",
+    "defu": "^6.1.2",
     "lodash-es": "^4.17.21",
     "unocss": "^0.53.1"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.11",
     "@iconify-json/mdi": "^1.1.52",
+    "@nuxt/content": "^2.7.0",
+    "@nuxt/devtools": "^0.6.1",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.5.3",
     "@nuxt/test-utils": "^3.5.3",
-    "@types/node": "^18.16.18",
+    "@nuxthq/studio": "^0.13.2",
+    "@nuxtjs/plausible": "^0.2.1",
+    "@types/node": "^20.3.1",
+    "@types/lodash-es": "^4.17.7",
     "@unocss/preset-icons": "^0.53.1",
+    "@vueuse/nuxt": "^10.2.0",
     "changelogen": "^0.5.3",
-    "eslint": "^8.43.0",
+    "eslint": "^8.42.0",
     "nuxt": "^3.5.3",
-    "vitest": "^0.31.4"
+    "nuxt-component-meta": "^0.5.3",
+    "nuxt-lodash": "^2.4.1",
+    "standard-version": "^9.5.0",
+    "unbuild": "^1.2.1",
+    "v-calendar": "^3.0.3",
+    "vue-tsc": "1.6.3"
   }
 }

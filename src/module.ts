@@ -53,6 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
+    const resolve = resolver.resolve
 
     const runtimeDir = resolver.resolve('./runtime')
 
@@ -120,6 +121,7 @@ export default defineNuxtModule<ModuleOptions>({
     const safelist = []
     safelist.push(...generateSafelist(colors))
 
+    await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@unocss/nuxt', {
       preflight: true,
       presets: [preset, presetMini(), presetWind(), presetAttributify(), presetIcons()],
@@ -136,8 +138,40 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
+    addPlugin({ src: resolver.resolve(runtimeDir, 'plugins', 'colors') })
+
     addComponentsDir({
       path: resolver.resolve(runtimeDir, 'components', 'elements'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'forms'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'data'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'layout'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'navigation'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'overlays'),
       prefix: options.prefix,
       global: options.global,
       watch: false
@@ -145,9 +179,6 @@ export default defineNuxtModule<ModuleOptions>({
 
     addImportsDir(resolver.resolve(runtimeDir, 'composables'))
 
-    addPlugin({
-      src: resolver.resolve(runtimeDir, 'plugins', 'colors')
-    })
 
 
   }
