@@ -14,7 +14,7 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist"
+    "dist/*"
   ],
   "engines": {
     "node": ">=16.14.0"
