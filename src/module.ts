@@ -66,8 +66,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     const preset = presetUno()
-
     const globalColors:any = preset.theme?.colors
+
     globalColors.primary = {
       50: 'rgb(var(--color-primary-50) / <alpha-value>)',
       100: 'rgb(var(--color-primary-100) / <alpha-value>)',
@@ -106,11 +106,12 @@ export default defineNuxtModule<ModuleOptions>({
         'truegray', 'true-gray', 'coolgray', 'cool-gray','bluegray', 'blue-gray'
       ].includes(color) )
 
+
     nuxt.options.appConfig.ui = {
       ...nuxt.options.appConfig.ui,
       primary: 'green',
       gray: 'slate',
-      colors: colors,
+      colors,
     }
 
     if (preset.theme?.colors) {

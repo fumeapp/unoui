@@ -1,6 +1,6 @@
 <template>
   <div w-screen h-screen bg-gray-900 flex items-center justify-center text-white>
-    <u-button color="black" variant="outline">
+    <u-button>
       hello there
     </u-button>
   </div>
