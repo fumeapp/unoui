@@ -13,7 +13,7 @@ function copyFileRegex(src: string, dest: string, rules: ReplacementRule[]): voi
   const file = path.basename(src)
   fs.copyFileSync(src, dest)
   let content = fs.readFileSync(dest, 'utf-8')
-  rules.forEach((rule) => content = content.replace(rule.pattern, rule.replacement))
+  rules.forEach((rule) => content = content.replaceAll(rule.pattern, rule.replacement))
   fs.writeFileSync(dest, content, 'utf-8')
   console.log(`Copied and applied replacements to ${file}`)
 }
@@ -57,12 +57,16 @@ async function main() {
       replacement: "",
     },
     {
+     pattern: "739984",
+      replacement: "967369",
+    },
+    {
       pattern: "NuxtLabs",
       replacement: "Uno",
     },
     {
-      pattern: "NuxtLabs UI",
-      replacement: "Uno UI",
+      pattern: "@nuxthq/ui",
+      replacement: "unoui",
     }
   ]
 
@@ -80,6 +84,9 @@ async function main() {
   copyFileRegex(
     path.join(__dirname, '../migrate/components-Logo.vue'),
     path.join(__dirname, '../docs/components/Logo.vue'), [])
+  copyFileRegex(
+    path.join(__dirname, '../migrate/1.getting-started-1.index.md'),
+    path.join(__dirname, '../docs/content/1.getting-started/1.index.md'), [])
 
 }
 
