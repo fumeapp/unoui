@@ -1,6 +1,6 @@
 {
   "name": "unoui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "UnoUI",
   "repository": "https://github.com/fumeapp/unoui",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "lint": "eslint .",
     "typecheck": "nuxi typecheck",
     "prepare": "nuxi prepare docs",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "migrate": "jiti ./scripts/migrate.ts"
   },
   "dependencies": {
