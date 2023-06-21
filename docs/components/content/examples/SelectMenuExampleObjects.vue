@@ -1,10 +1,10 @@
 <script setup>
 const people = [{
-  id: 'benjamincanac',
-  label: 'benjamincanac',
-  href: 'https://github.com/benjamincanac',
+  id: 'acidjazz',
+  label: 'acidjazz',
+  href: 'https://github.com/acidjazz',
   target: '_blank',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/739984?v=4' }
+  avatar: { src: 'https://avatars.githubusercontent.com/u/967369?v=4' }
 },
 {
   id: 'Atinux',

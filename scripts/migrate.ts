@@ -49,8 +49,8 @@ async function main() {
       replacement: "import { presetUno } from 'unocss'\r\nconst colors = presetUno().theme.colors",
     },
     {
-      pattern: "modules: [",
-      replacement: "css: [ '@/assets/prose.css', ],\r\n  modules: [",
+      pattern: "content: {",
+      replacement: "css: [ '@/assets/prose.css', ],\r\n  content: {",
     },
     {
       pattern: "'@nuxtjs/plausible',",
@@ -61,12 +61,16 @@ async function main() {
       replacement: "967369",
     },
     {
+     pattern: "benjamincanac",
+      replacement: "acidjazz",
+    },
+    {
       pattern: "NuxtLabs",
       replacement: "Uno",
     },
     {
       pattern: "@nuxthq/ui",
-      replacement: "unoui",
+      replacement: "@fumeapp/unoui",
     }
   ]
 

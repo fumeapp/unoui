@@ -5,7 +5,6 @@ const colors = presetUno().theme.colors
 
 export default defineNuxtConfig({
   // @ts-ignore
-  css: [ '@/assets/prose.css', ],
   modules: [
     ui,
     '@vueuse/nuxt',
@@ -16,6 +15,7 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     'nuxt-component-meta'
   ],
+  css: [ '@/assets/prose.css', ],
   content: {
     highlight: {
       theme: {
