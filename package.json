@@ -28,7 +28,7 @@
     "lint": "eslint .",
     "typecheck": "nuxi typecheck",
     "prepare": "nuxi prepare docs",
-    "release": "pnpm lint && standard-version && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "migrate": "jiti ./scripts/migrate.ts"
   },
   "dependencies": {
