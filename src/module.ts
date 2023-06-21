@@ -129,10 +129,10 @@ export default defineNuxtModule<ModuleOptions>({
        content: {
          pipeline: {
           include: [
-            /\.(vue|md)($|\?)/,
-            'src/**/*.{md,mjs,js,ts}',
-             resolver.resolve(runtimeDir, 'components/**/*.{vue,mjs,md,ts}'),
-             resolver.resolve(runtimeDir, '*.{mjs,js,ts,md}'),
+            /\.(vue)($|\?)/,
+            'src/**/*.{mjs,js,ts}',
+             resolver.resolve(runtimeDir, 'components/**/*.{vue,mjs,ts}'),
+             resolver.resolve(runtimeDir, '*.{mjs,js,ts}'),
           ]
         },
       },
