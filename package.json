@@ -1,6 +1,6 @@
 {
   "name": "@fumeapp/unoui",
-  "version": "0.0.11",
+  "version": "0.0.10",
   "description": "UnoUI",
   "repository": "https://github.com/fumeapp/unoui",
   "license": "MIT",
@@ -14,7 +14,7 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist/*"
+    "dist"
   ],
   "engines": {
     "node": ">=16.14.0"
