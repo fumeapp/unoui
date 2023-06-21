@@ -1,13 +1,12 @@
 {
   "name": "@fumeapp/unoui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "UnoUI",
   "repository": "https://github.com/fumeapp/unoui",
   "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     }
