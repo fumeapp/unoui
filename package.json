@@ -1,6 +1,6 @@
 {
   "name": "@fumeapp/unoui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "UnoUI",
   "repository": "https://github.com/fumeapp/unoui",
   "license": "MIT",
@@ -63,7 +63,6 @@
     "nuxt-component-meta": "^0.5.3",
     "nuxt-lodash": "^2.4.1",
     "standard-version": "^9.5.0",
-    "unbuild": "^1.2.1",
     "v-calendar": "^3.0.3",
     "vue-tsc": "1.6.3"
   }
