@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "donjayamanne.githistory",
+    "GitHub.copilot",
+    "GitHub.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "ms-vscode.vscode-typescript-next",
+    "christian-kohler.path-intellisense",
+    "henrynguyen5-vsc.vsc-nvm",
+    "vscode-icons-team.vscode-icons",
+    "Vue.volar",
+    "redhat.vscode-yaml"
+  ],
+}
